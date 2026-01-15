@@ -7,7 +7,12 @@ public class MessageTest3 {
     Message message=new Message("test message");
 
     @Test
-    public void testGoodbyeMessage(){
-       assertEquals(message.goodbyeMessage(),"Goodbye");
+    public void testGoodbyeMessageTrue(){
+        assertEquals(message.goodbyeMessage(),"Goodbye");
+    }
+
+    @Test
+    public void testGoodByeFalse(){
+        assertNotEquals(message.goodbyeMessage(),"Goodbye");
     }
 }
