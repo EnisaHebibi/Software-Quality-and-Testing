@@ -10,27 +10,26 @@ import java.util.Collection;
 import java.util.Objects;
 
 public class PrimeNumberCheckerTest {
- private PrimeNumberChecker primeNumberChecker;
+private PrimeNumberChecker primeNumberChecker;
 
- @BeforeEach
+@BeforeEach
     public void setup(){
-     primeNumberChecker=new PrimeNumberChecker();
- }
+    primeNumberChecker=new PrimeNumberChecker();
+}
 
- public static Collection<Object[]> number(){
-     return Arrays.asList(new Object[][]{
-             {2,true},
-             {6,false},
-             {19,true},
-             {22,false},
-             {23,true}
-     });
- }
+public static Collection<Object[]> numbers(){
+    return Arrays.asList(new Object[][]{
+            {2,true},
+            {6,false},
+            {19,true},
+            {22,false},
+            {23,true}
+    });
+}
 
- @ParameterizedTest
-    @MethodSource("number")
-    public void testNumberChecker(int inputNumber,boolean expectedResult){
-     Assertions.assertEquals(expectedResult,primeNumberChecker.validate(inputNumber));
- }
-
+@ParameterizedTest
+@MethodSource("numbers")
+public void test(int testingNumber,boolean expectedResult){
+Assertions.assertEquals(expectedResult,primeNumberChecker.validate(testingNumber));
+}
 }
